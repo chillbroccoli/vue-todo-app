@@ -1,7 +1,5 @@
 <template>
   <li
-    @mouseover="isHovered = true"
-    @mouseout="isHovered = false"
     class="flex items-center justify-between px-6 py-4 overflow-hidden border-2 rounded-md shadow bg-zinc-700 border-indigo-600/30"
   >
     <div class="flex items-center gap-x-2">
@@ -45,7 +43,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import clsx from "clsx";
 import { IconTrash } from "@tabler/icons-vue";
 import { Todo } from "../lib/types";
@@ -54,8 +51,6 @@ const { todo } = defineProps<{ todo: Todo }>();
 const emit = defineEmits<{
   (name: "removeTodo", id: string): void;
 }>();
-
-const isHovered = ref(false);
 </script>
 
 <style>
